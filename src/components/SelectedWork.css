@@ -1,0 +1,265 @@
+/* ==========================================================================
+   SelectedWork Component Styles
+   ========================================================================== */
+
+.work-section {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border-subtle);
+  position: relative;
+}
+
+.work-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(48px, 8vw, 80px);
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.editorial-count {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-marigold);
+  background-color: rgba(234, 170, 0, 0.12);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+/* Asymmetrical Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+}
+
+.project-card {
+  grid-column: span 6;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(58, 15, 52, 0.3);
+  box-shadow: var(--shadow-editorial);
+}
+
+/* Featured Card spans 12 columns on desktop */
+.project-card-featured {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+/* Visual Canvas & Geometric Compositions */
+.project-visual-canvas {
+  position: relative;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 32px;
+}
+
+.project-card-featured .project-visual-canvas {
+  min-height: 380px;
+}
+
+.visual-variant-1 {
+  background: linear-gradient(135deg, #3A0F34 0%, #22051E 100%);
+  color: #DDE3E8;
+}
+
+.visual-variant-2 {
+  background: linear-gradient(135deg, #2D0B28 0%, #3A0F34 100%);
+  color: #DDE3E8;
+}
+
+.visual-variant-3 {
+  background: linear-gradient(135deg, #3A0F34 0%, #4D1445 100%);
+  color: #DDE3E8;
+}
+
+.visual-variant-4 {
+  background: linear-gradient(135deg, #260722 0%, #3A0F34 100%);
+  color: #DDE3E8;
+}
+
+.visual-graphic-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(234, 170, 0, 0.28) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.visual-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, #DDE3E8 1px, transparent 1px),
+    linear-gradient(to bottom, #DDE3E8 1px, transparent 1px);
+}
+
+.visual-icon-badge {
+  position: relative;
+  z-index: 2;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-medium);
+  background-color: rgba(221, 227, 232, 0.12);
+  border: 1px solid rgba(221, 227, 232, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-marigold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+}
+
+.project-card:hover .visual-icon-badge {
+  transform: scale(1.08);
+}
+
+.visual-metric-tag {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  z-index: 2;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-deep-aubergine);
+  background-color: var(--color-marigold);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.visual-number-stamp {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(221, 227, 232, 0.25);
+  line-height: 1;
+}
+
+/* Content Area */
+.project-content {
+  padding: clamp(24px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.project-category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-category {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-deep-aubergine);
+}
+
+.project-period {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 600;
+  color: var(--color-deep-aubergine);
+  line-height: 1.22;
+  margin-bottom: 14px;
+}
+
+.project-summary {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.project-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag-more {
+  background-color: transparent;
+  border: 1px dashed var(--color-border-medium);
+  font-weight: 600;
+}
+
+/* Footer Trigger */
+.project-footer-row {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn-text-interactive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-deep-aubergine);
+  transition: all var(--transition-fast);
+}
+
+.btn-text-interactive:hover {
+  color: var(--color-marigold);
+}
+
+.btn-arrow-icon {
+  transition: transform var(--transition-fast);
+}
+
+.btn-text-interactive:hover .btn-arrow-icon {
+  transform: translate(3px, -3px);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .project-card,
+  .project-card-featured {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+  }
+}

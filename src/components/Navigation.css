@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Navigation Component Styles
+   ========================================================================== */
+
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all var(--transition-smooth);
+  background-color: rgba(250, 251, 251, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+}
+
+.nav-header.is-scrolled {
+  background-color: rgba(250, 251, 251, 0.94);
+  border-bottom-color: var(--color-border-subtle);
+  box-shadow: 0 4px 20px -2px rgba(58, 15, 52, 0.04);
+}
+
+.nav-container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 18px var(--page-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Typographic Monogram */
+.nav-brand {
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-deep-aubergine);
+  letter-spacing: -0.04em;
+  transition: transform var(--transition-fast);
+}
+
+.nav-brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-dot {
+  color: var(--color-marigold);
+  font-size: 2.2rem;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 36px);
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-deep-aubergine);
+}
+
+.nav-link.is-active {
+  color: var(--color-deep-aubergine);
+  font-weight: 600;
+}
+
+.active-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-marigold);
+}
+
+/* Actions & CTA */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-cta {
+  padding: 10px 22px;
+  font-size: 0.82rem;
+}
+
+.mobile-toggle-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-deep-aubergine);
+  border-radius: var(--radius-small);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-toggle-btn:hover {
+  background-color: var(--color-ice-silver);
+}
+
+/* Mobile Drawer */
+.mobile-menu-drawer {
+  display: none;
+  width: 100%;
+  background-color: #FAFBFB;
+  border-bottom: 1px solid var(--color-border-medium);
+  padding: 0 var(--page-gutter);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms cubic-bezier(0.16, 1, 0.3, 1), padding 350ms ease;
+}
+
+.mobile-menu-drawer.is-open {
+  max-height: 460px;
+  padding: 20px var(--page-gutter) 30px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-deep-aubergine);
+  border-radius: var(--radius-small);
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--color-ice-silver);
+}
+
+.mobile-link-icon {
+  color: var(--color-marigold);
+}
+
+.mobile-cta-item {
+  margin-top: 10px;
+}
+
+.mobile-nav-cta {
+  width: 100%;
+  padding: 14px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .nav-desktop,
+  .nav-cta {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  .mobile-menu-drawer {
+    display: block;
+  }
+}
